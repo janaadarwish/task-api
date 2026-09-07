@@ -45,3 +45,26 @@ const port = 3000;
 const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+// ---------------------------------------------------------------------
+// Stage 3 - create a task
+// ---------------------------------------------------------------------
+let nextId = 4; // tasks 1-3 already exist as seed data
+
+app.post('/tasks', (req, res) => {
+    const title = req.body && req.body.title;
+
+    if (!title || title.trim() === "") {
+        return res.status(400).json({ error: "Field 'title' is required and cannot be empty" });
+    }
+
+    const newTask = {
+        id: nextId,
+        title: title.trim(),
+        done: false
+    };
+
+    tasks.push(newTask);
+    nextId++;
+
+    res.status(201).json(newTask);
+});

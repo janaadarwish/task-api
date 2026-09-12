@@ -4,7 +4,8 @@ Readme · MD
 # Task API
  
 A simple CRUD API for managing tasks, built with Node.js and Express as part of the FlyRank Internship — Backend Track.
- 
+
+ <![Swagger UI](swagger.PNG)
 ## Features
  
 - Create, read, update, and delete tasks
@@ -87,3 +88,4 @@ Keep-Alive: timeout=5
 
 [{"id":1,"title":"Buy milk","done":false},{"id":2,"title":"Walk the dog","done":true},{"id":3,"title":"Finish W2 assignment","done":false}]
 ```
+

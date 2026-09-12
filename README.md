@@ -70,4 +70,20 @@ This is the core idea of **separation of concerns**: each layer has one responsi
 ## Known Limitation
  
 Data is stored in memory, so it resets every time the server restarts. This is intentional at this stage — the next step is to replace `repository.js` with a real database connection, which the layered structure is specifically designed to make painless.
- 
+ ## Sample curl Output
+
+Request: `GET /tasks`
+
+```
+$ curl.exe -i http://localhost:3000/tasks
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 139
+ETag: W/"8b-LNFY3dXWI924YRL/+rEeoz7/4m8"
+Date: Sat, 12 Sep 2026 10:23:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":1,"title":"Buy milk","done":false},{"id":2,"title":"Walk the dog","done":true},{"id":3,"title":"Finish W2 assignment","done":false}]
+```
